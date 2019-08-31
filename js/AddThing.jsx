@@ -9,7 +9,7 @@ class AddThing extends React.Component {
     render() {
       return (
           <div>
-              <div>Dodaj Rzecz</div>
+              <div className="addThing">Dodaj Rzecz</div>
               <hr/>
           </div>
         );

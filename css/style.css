@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.addThing {
+    text-align: center;
+    font-weight: bold;
+}

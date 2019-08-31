@@ -1,11 +1,18 @@
 import React from 'react';
 
-const Thing = () => {
+const Thing = (props) => {
 
+
+
+
+    const {name, quantity, } = props.thing;
 
     return (
         <div>
-            <h1>Pojedyncza rzecz</h1>
+            <p>
+                <strong>{name} </strong>
+                <strong>{quantity}</strong>
+            </p>
         </div>
     )
 };
