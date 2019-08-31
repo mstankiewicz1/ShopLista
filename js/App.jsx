@@ -12,24 +12,47 @@ class App extends React.Component {
                   name: 'pomidory',
                   quantity: '1kg',
                   important: true,
-                  active: true
+                  active: false,
               },
               {
                   id: 1,
                   name: 'ogórki',
                   quantity: '2kg',
                   important: true,
-                  active: true
+                  active: true,
               },
               {
                   id: 2,
                   name: 'cebula',
                   quantity: '3kg',
                   important: true,
-                  active: true
+                  active: true,
               },
               ]
             };
+
+
+    deleteThing = (id) => {
+        const things = [...this.state.things];
+        const index = things.findIndex(thing => thing.id === id);
+        things.splice(index,1);
+
+        this.setState({
+            things
+        })
+    };
+
+    changeThingStatus = (id) => {
+        const things = [...this.state.things];
+        things.forEach(thing => {
+            if(thing.id === id){
+                thing.active = false;
+            }
+        });
+        this.setState({
+            things
+        })
+    };
 
 
     render() {
@@ -37,7 +60,7 @@ class App extends React.Component {
             <div>
                 <h1>Lista zakupów</h1>
                 <AddThing/>
-                <ThingList things={this.state.things}/>
+                <ThingList things={this.state.things} delete={this.deleteThing} change={this.changeThingStatus}/>
             </div>
         )
     }

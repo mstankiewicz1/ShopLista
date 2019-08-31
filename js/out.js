@@ -22541,6 +22541,8 @@ var _ThingList2 = _interopRequireDefault(_ThingList);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -22567,7 +22569,7 @@ var App = function (_React$Component) {
                 name: 'pomidory',
                 quantity: '1kg',
                 important: true,
-                active: true
+                active: false
             }, {
                 id: 1,
                 name: 'ogórki',
@@ -22581,6 +22583,26 @@ var App = function (_React$Component) {
                 important: true,
                 active: true
             }]
+        }, _this.deleteThing = function (id) {
+            var things = [].concat(_toConsumableArray(_this.state.things));
+            var index = things.findIndex(function (thing) {
+                return thing.id === id;
+            });
+            things.splice(index, 1);
+
+            _this.setState({
+                things: things
+            });
+        }, _this.changeThingStatus = function (id) {
+            var things = [].concat(_toConsumableArray(_this.state.things));
+            things.forEach(function (thing) {
+                if (thing.id === id) {
+                    thing.active = false;
+                }
+            });
+            _this.setState({
+                things: things
+            });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -22596,7 +22618,7 @@ var App = function (_React$Component) {
                     'Lista zakup\xF3w'
                 ),
                 _react2.default.createElement(_AddThing2.default, null),
-                _react2.default.createElement(_ThingList2.default, { things: this.state.things })
+                _react2.default.createElement(_ThingList2.default, { things: this.state.things, 'delete': this.deleteThing, change: this.changeThingStatus })
             );
         }
     }]);
@@ -22692,10 +22714,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var ThingList = function ThingList(props) {
 
-    var things = props.things.map(function (thing) {
+    var active = props.things.filter(function (thing) {
+        return thing.active;
+    });
+    var done = props.things.filter(function (thing) {
+        return !thing.active;
+    });
+
+    var thingsActive = active.map(function (thing) {
         return _react2.default.createElement(_Thing2.default, {
             key: thing.id,
-            thing: thing
+            thing: thing,
+            'delete': props.delete,
+            change: props.change
+        });
+    });
+
+    var thingsDone = done.map(function (thing) {
+        return _react2.default.createElement(_Thing2.default, {
+            key: thing.id,
+            thing: thing,
+            'delete': props.delete,
+            change: props.change
         });
     });
 
@@ -22708,9 +22748,20 @@ var ThingList = function ThingList(props) {
             _react2.default.createElement(
                 'h1',
                 null,
-                'Rzeczy do kupienia'
+                'Rzeczy do kupienia ',
+                _react2.default.createElement(
+                    'em',
+                    null,
+                    '(',
+                    active.length,
+                    ')'
+                )
             ),
-            things
+            thingsActive.length > 0 ? thingsActive : _react2.default.createElement(
+                'p',
+                null,
+                'Brak rzeczy do kupienia'
+            )
         ),
         _react2.default.createElement('hr', null),
         _react2.default.createElement(
@@ -22719,8 +22770,16 @@ var ThingList = function ThingList(props) {
             _react2.default.createElement(
                 'h1',
                 null,
-                'Rzeczy kupione (0)'
-            )
+                'Rzeczy kupione ',
+                _react2.default.createElement(
+                    'em',
+                    null,
+                    '(',
+                    done.length,
+                    ')'
+                )
+            ),
+            thingsDone
         )
     );
 };
@@ -22747,7 +22806,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Thing = function Thing(props) {
     var _props$thing = props.thing,
         name = _props$thing.name,
-        quantity = _props$thing.quantity;
+        quantity = _props$thing.quantity,
+        id = _props$thing.id;
 
 
     return _react2.default.createElement(
@@ -22766,6 +22826,20 @@ var Thing = function Thing(props) {
                 'strong',
                 null,
                 quantity
+            ),
+            _react2.default.createElement(
+                'button',
+                { onClick: function onClick() {
+                        return props.change(id);
+                    } },
+                'Kupione'
+            ),
+            _react2.default.createElement(
+                'button',
+                { onClick: function onClick() {
+                        return props.delete(id);
+                    } },
+                'X'
             )
         )
     );
