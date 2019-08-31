@@ -15,3 +15,19 @@ h1 {
 .active, .done {
     text-align: center;
 }
+
+input {
+    margin: 0 auto;
+    padding: 5px 10px;
+    display: block;
+}
+
+.importantLabel {
+    display: block;
+    text-align: center;
+}
+
+.addButton {
+    display: block;
+    margin: 0 auto;
+}

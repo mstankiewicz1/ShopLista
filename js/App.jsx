@@ -5,6 +5,8 @@ import ThingList from './ThingList.jsx';
 
 class App extends React.Component {
 
+    counter = 2;
+
     state = {
       things: [
               {
@@ -54,12 +56,32 @@ class App extends React.Component {
         })
     };
 
+    addThing = (name, quantity, important) => {
+      console.log("dodany obiekt");
+      const thing = {
+            id: this.counter,
+            name,
+            quantity,
+            important,
+            active: true,
+      };
+      this.counter++;
+      console.log(thing, this.counter);
+
+      this.setState(prevState =>({
+        things: [...prevState.things, thing]
+        })
+      );
+
+      return true
+    };
+
 
     render() {
         return (
             <div>
                 <h1>Lista zakupów</h1>
-                <AddThing/>
+                <AddThing add={this.addThing}/>
                 <ThingList things={this.state.things} delete={this.deleteThing} change={this.changeThingStatus}/>
             </div>
         )

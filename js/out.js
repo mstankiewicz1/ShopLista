@@ -22563,7 +22563,7 @@ var App = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.counter = 2, _this.state = {
             things: [{
                 id: 0,
                 name: 'pomidory',
@@ -22603,6 +22603,25 @@ var App = function (_React$Component) {
             _this.setState({
                 things: things
             });
+        }, _this.addThing = function (name, quantity, important) {
+            console.log("dodany obiekt");
+            var thing = {
+                id: _this.counter,
+                name: name,
+                quantity: quantity,
+                important: important,
+                active: true
+            };
+            _this.counter++;
+            console.log(thing, _this.counter);
+
+            _this.setState(function (prevState) {
+                return {
+                    things: [].concat(_toConsumableArray(prevState.things), [thing])
+                };
+            });
+
+            return true;
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -22617,7 +22636,7 @@ var App = function (_React$Component) {
                     null,
                     'Lista zakup\xF3w'
                 ),
-                _react2.default.createElement(_AddThing2.default, null),
+                _react2.default.createElement(_AddThing2.default, { add: this.addThing }),
                 _react2.default.createElement(_ThingList2.default, { things: this.state.things, 'delete': this.deleteThing, change: this.changeThingStatus })
             );
         }
@@ -22667,21 +22686,61 @@ var AddThing = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddThing.__proto__ || Object.getPrototypeOf(AddThing)).call.apply(_ref, [this].concat(args))), _this), _this.state = {}, _temp), _possibleConstructorReturn(_this, _ret);
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AddThing.__proto__ || Object.getPrototypeOf(AddThing)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            name: '',
+            quantity: '',
+            checked: false
+        }, _this.handleName = function (e) {
+            _this.setState({
+                name: e.target.value
+            });
+        }, _this.handleQuantity = function (e) {
+            _this.setState({
+                quantity: e.target.value
+            });
+        }, _this.handleCheckbox = function (e) {
+            _this.setState({
+                checked: e.target.checked
+            });
+        }, _this.handleClick = function () {
+            console.log("dziala");
+            var _this$state = _this.state,
+                name = _this$state.name,
+                quantity = _this$state.quantity,
+                checked = _this$state.checked;
+
+            var add = _this.props.add(name, quantity, checked);
+            if (add) {
+                _this.setState({
+                    name: '',
+                    quantity: '',
+                    checked: false
+                });
+            }
+        }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
     _createClass(AddThing, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "div",
-                null,
+                'div',
+                { className: 'form' },
+                _react2.default.createElement('input', { type: 'text', placeholder: 'Co kupujemy ?', value: this.state.name, onChange: this.handleName }),
+                _react2.default.createElement('input', { type: 'text', placeholder: 'Ile kupujemy ?', value: this.state.quantity, onChange: this.handleQuantity }),
+                _react2.default.createElement('br', null),
                 _react2.default.createElement(
-                    "div",
-                    { className: "addThing" },
-                    "Dodaj Rzecz"
+                    'label',
+                    { className: 'importantLabel', htmlFor: 'important' },
+                    'Priorytet',
+                    _react2.default.createElement('input', { type: 'checkbox', checked: this.state.checked, id: 'important', onChange: this.handleCheckbox })
                 ),
-                _react2.default.createElement("hr", null)
+                _react2.default.createElement('br', null),
+                _react2.default.createElement(
+                    'button',
+                    { className: 'addButton', onClick: this.handleClick },
+                    'Dodaj'
+                )
             );
         }
     }]);
@@ -22804,45 +22863,74 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Thing = function Thing(props) {
+
+    var style = {
+        color: 'red'
+    };
+
     var _props$thing = props.thing,
         name = _props$thing.name,
         quantity = _props$thing.quantity,
-        id = _props$thing.id;
+        id = _props$thing.id,
+        active = _props$thing.active,
+        important = _props$thing.important;
 
 
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            'p',
+    if (active) {
+        return _react2.default.createElement(
+            'div',
             null,
             _react2.default.createElement(
-                'strong',
+                'p',
                 null,
-                name,
-                ' '
-            ),
-            _react2.default.createElement(
-                'strong',
-                null,
-                quantity
-            ),
-            _react2.default.createElement(
-                'button',
-                { onClick: function onClick() {
-                        return props.change(id);
-                    } },
-                'Kupione'
-            ),
-            _react2.default.createElement(
-                'button',
-                { onClick: function onClick() {
-                        return props.delete(id);
-                    } },
-                'X'
+                _react2.default.createElement(
+                    'strong',
+                    { style: important ? style : null },
+                    name,
+                    ' '
+                ),
+                _react2.default.createElement(
+                    'strong',
+                    null,
+                    quantity
+                ),
+                _react2.default.createElement(
+                    'button',
+                    { onClick: function onClick() {
+                            return props.change(id);
+                        } },
+                    'Kupione'
+                ),
+                _react2.default.createElement(
+                    'button',
+                    { onClick: function onClick() {
+                            return props.delete(id);
+                        } },
+                    'X'
+                )
             )
-        )
-    );
+        );
+    } else {
+        return _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+                'p',
+                null,
+                _react2.default.createElement(
+                    'strong',
+                    null,
+                    name,
+                    ' '
+                ),
+                _react2.default.createElement(
+                    'strong',
+                    null,
+                    quantity
+                )
+            )
+        );
+    }
 };
 
 exports.default = Thing;
