@@ -28,14 +28,14 @@ const ThingList = (props) => {
     return (
         <div>
             <div className="active">
-                <h1>Rzeczy do kupienia <em>({active.length})</em></h1>
+                <h2>Rzeczy do kupienia <em>({active.length})</em></h2>
                 {thingsActive.length > 0  ? thingsActive : <p>Brak rzeczy do kupienia</p>}
             </div>
 
             <hr/>
 
             <div className="done">
-                <h1>Rzeczy kupione <em>({done.length})</em></h1>
+                <h2>Rzeczy kupione <em>({done.length})</em></h2>
                 {thingsDone}
             </div>
         </div>

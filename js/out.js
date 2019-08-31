@@ -22568,7 +22568,7 @@ var App = function (_React$Component) {
                 id: 0,
                 name: 'pomidory',
                 quantity: '1kg',
-                important: true,
+                important: false,
                 active: false
             }, {
                 id: 1,
@@ -22580,7 +22580,7 @@ var App = function (_React$Component) {
                 id: 2,
                 name: 'cebula',
                 quantity: '3kg',
-                important: true,
+                important: false,
                 active: true
             }]
         }, _this.deleteThing = function (id) {
@@ -22736,7 +22736,7 @@ var AddThing = function (_React$Component) {
                 _react2.default.createElement(
                     'button',
                     { className: 'addButton', onClick: this.handleClick },
-                    'Dodaj'
+                    'DODAJ'
                 )
             );
         }
@@ -22802,7 +22802,7 @@ var ThingList = function ThingList(props) {
             'div',
             { className: 'active' },
             _react2.default.createElement(
-                'h1',
+                'h2',
                 null,
                 'Rzeczy do kupienia ',
                 _react2.default.createElement(
@@ -22824,7 +22824,7 @@ var ThingList = function ThingList(props) {
             'div',
             { className: 'done' },
             _react2.default.createElement(
-                'h1',
+                'h2',
                 null,
                 'Rzeczy kupione ',
                 _react2.default.createElement(
@@ -22893,17 +22893,17 @@ var Thing = function Thing(props) {
                 ),
                 _react2.default.createElement(
                     'button',
-                    { onClick: function onClick() {
+                    { className: 'buttonBought', onClick: function onClick() {
                             return props.change(id);
                         } },
-                    'Kupione'
+                    'KUPIONE'
                 ),
                 _react2.default.createElement(
                     'button',
-                    { onClick: function onClick() {
+                    { className: 'buttonDelete', onClick: function onClick() {
                             return props.delete(id);
                         } },
-                    'X'
+                    'USU\u0143'
                 )
             )
         );

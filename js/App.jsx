@@ -13,7 +13,7 @@ class App extends React.Component {
                   id: 0,
                   name: 'pomidory',
                   quantity: '1kg',
-                  important: true,
+                  important: false,
                   active: false,
               },
               {
@@ -27,7 +27,7 @@ class App extends React.Component {
                   id: 2,
                   name: 'cebula',
                   quantity: '3kg',
-                  important: true,
+                  important: false,
                   active: true,
               },
               ]

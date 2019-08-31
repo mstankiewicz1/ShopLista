@@ -49,7 +49,7 @@ class AddThing extends React.Component {
               <input type="checkbox" checked={this.state.checked} id="important" onChange={this.handleCheckbox}/>
               </label>
               <br/>
-              <button className="addButton" onClick={this.handleClick}>Dodaj</button>
+              <button className="addButton" onClick={this.handleClick}>DODAJ</button>
           </div>
         );
     }

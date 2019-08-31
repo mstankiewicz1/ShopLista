@@ -16,8 +16,8 @@ const Thing = (props) => {
                 <p>
                     <strong style={important ? style : null}>{name} </strong>
                     <strong>{quantity}</strong>
-                    <button onClick={() => props.change(id)}>Kupione</button>
-                    <button onClick={() => props.delete(id)}>X</button>
+                    <button className="buttonBought" onClick={() => props.change(id)}>KUPIONE</button>
+                    <button className="buttonDelete" onClick={() => props.delete(id)}>USUŃ</button>
                 </p>
             </div>
         );
