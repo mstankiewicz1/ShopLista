@@ -28,7 +28,6 @@ class AddThing extends React.Component {
     };
 
     handleClick = () => {
-        console.log("dziala");
         const {name, quantity, checked} = this.state;
         const add = this.props.add(name, quantity, checked);
         if(add){

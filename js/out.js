@@ -22563,7 +22563,7 @@ var App = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.counter = 2, _this.state = {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.counter = 3, _this.state = {
             things: [{
                 id: 0,
                 name: 'pomidory',
@@ -22604,7 +22604,6 @@ var App = function (_React$Component) {
                 things: things
             });
         }, _this.addThing = function (name, quantity, important) {
-            console.log("dodany obiekt");
             var thing = {
                 id: _this.counter,
                 name: name,
@@ -22613,7 +22612,6 @@ var App = function (_React$Component) {
                 active: true
             };
             _this.counter++;
-            console.log(thing, _this.counter);
 
             _this.setState(function (prevState) {
                 return {
@@ -22703,7 +22701,6 @@ var AddThing = function (_React$Component) {
                 checked: e.target.checked
             });
         }, _this.handleClick = function () {
-            console.log("dziala");
             var _this$state = _this.state,
                 name = _this$state.name,
                 quantity = _this$state.quantity,

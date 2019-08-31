@@ -5,7 +5,7 @@ import ThingList from './ThingList.jsx';
 
 class App extends React.Component {
 
-    counter = 2;
+    counter = 3;
 
     state = {
       things: [
@@ -57,7 +57,6 @@ class App extends React.Component {
     };
 
     addThing = (name, quantity, important) => {
-      console.log("dodany obiekt");
       const thing = {
             id: this.counter,
             name,
@@ -66,7 +65,6 @@ class App extends React.Component {
             active: true,
       };
       this.counter++;
-      console.log(thing, this.counter);
 
       this.setState(prevState =>({
         things: [...prevState.things, thing]
