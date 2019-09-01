@@ -32,7 +32,6 @@ const ThingList = (props) => {
                 {thingsActive.length > 0  ? thingsActive : <p>Brak rzeczy do kupienia</p>}
             </div>
 
-            <hr/>
 
             <div className="done">
                 <h2>Rzeczy kupione <em>({done.length})</em></h2>

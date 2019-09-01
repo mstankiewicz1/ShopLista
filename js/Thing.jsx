@@ -14,10 +14,16 @@ const Thing = (props) => {
         return (
             <div>
                 <p>
-                    <strong style={important ? style : null}>{name} </strong>
-                    <strong>{quantity}</strong>
-                    <button className="buttonBought" onClick={() => props.change(id)}>KUPIONE</button>
-                    <button className="buttonDelete" onClick={() => props.delete(id)}>USUŃ</button>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><strong style={important ? style : null}>{name} </strong></td>
+                                <td><strong style={important ? style : null}>{quantity}</strong></td>
+                                <td><button className="buttonBought" onClick={() => props.change(id)}>KUPIONE</button></td>
+                                <td><button className="buttonDelete" onClick={() => props.delete(id)}>USUŃ</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </p>
             </div>
         );

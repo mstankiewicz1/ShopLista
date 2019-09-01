@@ -22706,13 +22706,18 @@ var AddThing = function (_React$Component) {
                 quantity = _this$state.quantity,
                 checked = _this$state.checked;
 
-            var add = _this.props.add(name, quantity, checked);
-            if (add) {
-                _this.setState({
-                    name: '',
-                    quantity: '',
-                    checked: false
-                });
+
+            if (name.length > 2) {
+                var add = _this.props.add(name, quantity, checked);
+                if (add) {
+                    _this.setState({
+                        name: '',
+                        quantity: '',
+                        checked: false
+                    });
+                }
+            } else {
+                alert("Nazwa powinna mieć przynajmniej 2 znaki");
             }
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -22819,7 +22824,6 @@ var ThingList = function ThingList(props) {
                 'Brak rzeczy do kupienia'
             )
         ),
-        _react2.default.createElement('hr', null),
         _react2.default.createElement(
             'div',
             { className: 'done' },
@@ -22881,29 +22885,57 @@ var Thing = function Thing(props) {
                 'p',
                 null,
                 _react2.default.createElement(
-                    'strong',
-                    { style: important ? style : null },
-                    name,
-                    ' '
-                ),
-                _react2.default.createElement(
-                    'strong',
+                    'table',
                     null,
-                    quantity
-                ),
-                _react2.default.createElement(
-                    'button',
-                    { className: 'buttonBought', onClick: function onClick() {
-                            return props.change(id);
-                        } },
-                    'KUPIONE'
-                ),
-                _react2.default.createElement(
-                    'button',
-                    { className: 'buttonDelete', onClick: function onClick() {
-                            return props.delete(id);
-                        } },
-                    'USU\u0143'
+                    _react2.default.createElement(
+                        'tbody',
+                        null,
+                        _react2.default.createElement(
+                            'tr',
+                            null,
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                _react2.default.createElement(
+                                    'strong',
+                                    { style: important ? style : null },
+                                    name,
+                                    ' '
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                _react2.default.createElement(
+                                    'strong',
+                                    { style: important ? style : null },
+                                    quantity
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                _react2.default.createElement(
+                                    'button',
+                                    { className: 'buttonBought', onClick: function onClick() {
+                                            return props.change(id);
+                                        } },
+                                    'KUPIONE'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'td',
+                                null,
+                                _react2.default.createElement(
+                                    'button',
+                                    { className: 'buttonDelete', onClick: function onClick() {
+                                            return props.delete(id);
+                                        } },
+                                    'USU\u0143'
+                                )
+                            )
+                        )
+                    )
                 )
             )
         );

@@ -28,14 +28,20 @@ class AddThing extends React.Component {
     };
 
     handleClick = () => {
+
         const {name, quantity, checked} = this.state;
-        const add = this.props.add(name, quantity, checked);
-        if(add){
-            this.setState({
-                name: '',
-                quantity: '',
-                checked: false
-            })
+
+        if (name.length > 2) {
+            const add = this.props.add(name, quantity, checked);
+            if (add) {
+                this.setState({
+                    name: '',
+                    quantity: '',
+                    checked: false
+                })
+            }
+        } else {
+            alert("Nazwa powinna mieć przynajmniej 2 znaki");
         }
     };
 
