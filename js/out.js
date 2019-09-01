@@ -22802,7 +22802,7 @@ var ThingList = function ThingList(props) {
 
     return _react2.default.createElement(
         'div',
-        null,
+        { className: 'thingList' },
         _react2.default.createElement(
             'div',
             { className: 'active' },

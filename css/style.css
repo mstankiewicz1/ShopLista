@@ -19,6 +19,12 @@ h1 {
     margin-bottom: 1vh;
 }
 
+@media screen and (min-width: 801px) {
+    h1 {
+        font-size: 5vw;
+    }
+}
+
 h2 {
     font-family: 'Kaushan Script', cursive;
     color: #92784F;
@@ -27,9 +33,25 @@ h2 {
     margin-bottom: 1vh;
 }
 
+@media screen and (min-width: 801px) {
+    h2 {
+        font-size: 4vw;
+    }
+}
+
 .addThing {
     text-align: center;
     font-weight: bold;
+}
+
+@media screen and (min-width: 801px) {
+    .form {
+        float: left;
+        border: 2px solid orange;
+        width: 47%;
+        margin-left: 2%;
+        min-height: 30vh;
+    }
 }
 
 .active {
@@ -42,6 +64,16 @@ h2 {
     text-align: center;
     color: 	#808080;
     margin-bottom: 2vh;
+}
+
+@media screen and (min-width: 801px) {
+    .thingList {
+        float: right;
+        width: 47%;
+        height: 100%;
+        margin-right: 2%;
+        border: 2px solid orangered;
+    }
 }
 
 p {
@@ -76,6 +108,14 @@ input {
     }
 }
 
+@media screen and (min-width: 801px) {
+    input {
+        width: 45vw;
+        height: 10vh;
+        margin-bottom: 3vh;
+    }
+}
+
 .importantLabel {
     display: block;
     text-align: center;
@@ -89,6 +129,13 @@ input {
 @media screen and (min-width: 601px) and (max-width: 800px) {
     .importantLabel {
         margin-bottom: 2vh;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .importantLabel {
+        margin-top: 3vh;
+        font-size: 4vw;
     }
 }
 
@@ -111,8 +158,21 @@ input {
     }
 }
 
+@media screen and (min-width: 801px) {
+    #important {
+        width: 6vw;
+        height: 6vw;
+    }
+}
+
 strong {
     font-size: 5vw;
+}
+
+@media screen and (min-width: 801px) {
+    strong {
+        font-size: 3vw;
+    }
 }
 
 table {
@@ -126,6 +186,15 @@ td {
     text-align: center;
     vertical-align: middle;
     word-wrap: break-word;
+}
+
+@media screen and (min-width: 801px) {
+    td {
+        padding: 1vw;
+        text-align: center;
+        vertical-align: middle;
+        word-wrap: break-word;
+    }
 }
 
 .addButton {
@@ -158,6 +227,14 @@ td {
     }
 }
 
+@media screen and (min-width: 801px) {
+    .addButton {
+        width: 28vw;
+        height: 9vh;
+        margin-top: 2vh;
+    }
+}
+
 .buttonBought {
     width: 22vw;
     height: 5vh;
@@ -185,6 +262,14 @@ td {
     }
 }
 
+@media screen and (min-width: 801px) {
+    .buttonBought {
+        width: 11vw;
+        height: 6vh;
+        font-size: 2vw;
+    }
+}
+
 .buttonDelete {
     width: 21vw;
     height: 5vh;
@@ -208,5 +293,13 @@ td {
     .buttonDelete {
         width: 22vw;
         height: 7vh;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .buttonDelete {
+        width: 11vw;
+        height: 6vh;
+        font-size: 2vw;
     }
 }
