@@ -22820,7 +22820,7 @@ var ThingList = function ThingList(props) {
             ),
             thingsActive.length > 0 ? thingsActive : _react2.default.createElement(
                 'p',
-                null,
+                { className: 'comunicatNoThings' },
                 'Brak rzeczy do kupienia'
             )
         ),

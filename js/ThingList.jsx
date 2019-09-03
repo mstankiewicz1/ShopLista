@@ -29,7 +29,7 @@ const ThingList = (props) => {
         <div className="thingList">
             <div className="active">
                 <h2>Rzeczy do kupienia <em>({active.length})</em></h2>
-                {thingsActive.length > 0  ? thingsActive : <p>Brak rzeczy do kupienia</p>}
+                {thingsActive.length > 0  ? thingsActive : <p className="comunicatNoThings">Brak rzeczy do kupienia</p>}
             </div>
 
 

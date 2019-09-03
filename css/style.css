@@ -22,22 +22,18 @@ h1 {
 @media screen and (min-width: 801px) {
     h1 {
         font-size: 5vw;
+        margin-bottom: 10vh;
     }
 }
 
 h2 {
     font-family: 'Kaushan Script', cursive;
     color: #92784F;
-    font-size: 5vw;
+    font-size: 4vw;
     font-weight: bold;
     margin-bottom: 1vh;
 }
 
-@media screen and (min-width: 801px) {
-    h2 {
-        font-size: 4vw;
-    }
-}
 
 .addThing {
     text-align: center;
@@ -47,7 +43,6 @@ h2 {
 @media screen and (min-width: 801px) {
     .form {
         float: left;
-        border: 2px solid orange;
         width: 47%;
         margin-left: 2%;
         min-height: 30vh;
@@ -72,7 +67,6 @@ h2 {
         width: 47%;
         height: 100%;
         margin-right: 2%;
-        border: 2px solid orangered;
     }
 }
 
@@ -80,6 +74,12 @@ p {
     font-family: 'Kaushan Script', cursive;
     margin-bottom: 1vh;
     font-size: 5vw;
+}
+
+@media screen and (min-width: 801px) {
+    p.comunicatNoThings {
+        font-size: 3vw;
+    }
 }
 
 input {
