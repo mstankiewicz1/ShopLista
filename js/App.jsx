@@ -5,32 +5,10 @@ import ThingList from './ThingList.jsx';
 
 class App extends React.Component {
 
-    counter = 3;
+    counter = 0;
 
     state = {
-      things: [
-              {
-                  id: 0,
-                  name: 'pomidory',
-                  quantity: '1kg',
-                  important: false,
-                  active: false,
-              },
-              {
-                  id: 1,
-                  name: 'ogórki',
-                  quantity: '2kg',
-                  important: true,
-                  active: true,
-              },
-              {
-                  id: 2,
-                  name: 'cebula',
-                  quantity: '3kg',
-                  important: false,
-                  active: true,
-              },
-              ]
+      things: []
             };
 
 

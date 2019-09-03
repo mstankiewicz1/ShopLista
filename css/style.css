@@ -63,6 +63,7 @@ h2 {
 @media screen and (min-width: 1281px) {
     h2 {
         font-size: 3vw;
+        margin-top: 2vh;
     }
 }
 
@@ -155,6 +156,13 @@ h2 {
 p {
     font-family: 'Kaushan Script', cursive;
     font-size: 5vw;
+}
+
+@media screen and (min-width: 1281px) {
+    p {
+        display: block;
+        font-size: 1vw;
+    }
 }
 
 p.comunicatNoThings {
@@ -365,7 +373,7 @@ td {
 
 @media screen and (min-width: 1281px) {
     td {
-        padding: 0.1vw;
+        padding: 1vw;
         text-align: center;
         vertical-align: middle;
         word-wrap: break-word;
