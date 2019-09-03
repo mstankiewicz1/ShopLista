@@ -1,5 +1,5 @@
 ShopLista is an application which allows to facilitate everyday 
-shopping. Application allows to add a product such information as 
+shopping. Application allows to add a product contains such information as 
 name, quantity and priority status. Application automatically 
 displays a list of bought items and list of items already 
 purchased. Of course, added item can be remove from the list 
