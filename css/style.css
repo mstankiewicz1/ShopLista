@@ -19,28 +19,86 @@ h1 {
     margin-bottom: 1vh;
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px) {
     h1 {
         font-size: 5vw;
-        margin-bottom: 10vh;
+        margin-bottom: 4vh;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    h1 {
+        font-size: 5vw;
+        margin-bottom: 4vh;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    h1 {
+        font-size: 5vw;
+        margin-bottom: 4vh;
     }
 }
 
 h2 {
     font-family: 'Kaushan Script', cursive;
     color: #92784F;
-    font-size: 4vw;
+    font-size: 5vw;
     font-weight: bold;
     margin-bottom: 1vh;
 }
 
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    h2 {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    h2 {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    h2 {
+        font-size: 4vw;
+    }
+}
 
 .addThing {
     text-align: center;
     font-weight: bold;
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    .form {
+        float: left;
+        width: 47%;
+        margin-left: 2%;
+        min-height: 30vh;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    .form {
+        float: left;
+        width: 47%;
+        margin-left: 2%;
+        min-height: 30vh;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .form {
+        float: left;
+        width: 47%;
+        margin-left: 2%;
+        min-height: 30vh;
+    }
+}
+
+@media screen and (min-width: 1281px) {
     .form {
         float: left;
         width: 47%;
@@ -61,7 +119,25 @@ h2 {
     margin-bottom: 2vh;
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    .thingList {
+        float: right;
+        width: 47%;
+        height: 100%;
+        margin-right: 2%;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .thingList {
+        float: right;
+        width: 47%;
+        height: 100%;
+        margin-right: 2%;
+    }
+}
+
+@media screen and (min-width: 1281px) {
     .thingList {
         float: right;
         width: 47%;
@@ -76,10 +152,8 @@ p {
     font-size: 5vw;
 }
 
-@media screen and (min-width: 801px) {
-    p.comunicatNoThings {
-        font-size: 3vw;
-    }
+p.comunicatNoThings {
+    font-size: 3.5vw;
 }
 
 input {
@@ -108,11 +182,30 @@ input {
     }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px) {
     input {
-        width: 45vw;
-        height: 10vh;
+        width: 35vw;
+        height: 8vh;
         margin-bottom: 3vh;
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    input {
+        width: 35vw;
+        height: 8vh;
+        margin-bottom: 3vh;
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    input {
+        width: 35vw;
+        height: 8vh;
+        margin-bottom: 3vh;
+        font-size: 2.5vw;
     }
 }
 
@@ -132,9 +225,23 @@ input {
     }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px){
     .importantLabel {
-        margin-top: 3vh;
+        margin-top: 2vh;
+        font-size: 4vw;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px){
+    .importantLabel {
+        margin-top: 2vh;
+        font-size: 4vw;
+    }
+}
+
+@media screen and (min-width: 1281px){
+    .importantLabel {
+        margin-top: 2vh;
         font-size: 4vw;
     }
 }
@@ -158,10 +265,24 @@ input {
     }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px){
     #important {
-        width: 6vw;
-        height: 6vw;
+        width: 5vw;
+        height: 5vw;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px){
+    #important {
+        width: 5vw;
+        height: 5vw;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    #important {
+        width: 5vw;
+        height: 5vw;
     }
 }
 
@@ -169,7 +290,19 @@ strong {
     font-size: 5vw;
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    strong {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    strong {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (min-width: 1281px) {
     strong {
         font-size: 3vw;
     }
@@ -188,7 +321,25 @@ td {
     word-wrap: break-word;
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    td {
+        padding: 1vw;
+        text-align: center;
+        vertical-align: middle;
+        word-wrap: break-word;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    td {
+        padding: 1vw;
+        text-align: center;
+        vertical-align: middle;
+        word-wrap: break-word;
+    }
+}
+
+@media screen and (min-width: 1281px) {
     td {
         padding: 1vw;
         text-align: center;
@@ -227,10 +378,26 @@ td {
     }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px) {
     .addButton {
-        width: 28vw;
-        height: 9vh;
+        width: 20vw;
+        height: 11vh;
+        margin-top: 2vh;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .addButton {
+        width: 20vw;
+        height: 13vh;
+        margin-top: 2vh;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .addButton {
+        width: 20vw;
+        height: 13vh;
         margin-top: 2vh;
     }
 }
@@ -262,10 +429,26 @@ td {
     }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px) {
     .buttonBought {
         width: 11vw;
         height: 6vh;
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .buttonBought {
+        width: 11vw;
+        height: 8vh;
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .buttonBought {
+        width: 11vw;
+        height: 8vh;
         font-size: 2vw;
     }
 }
@@ -296,10 +479,26 @@ td {
     }
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 801px) and (max-width: 1024px) {
     .buttonDelete {
         width: 11vw;
         height: 6vh;
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .buttonDelete {
+        width: 11vw;
+        height: 8vh;
+        font-size: 2vw;
+    }
+}
+
+@media screen and (min-width: 1281px) {
+    .buttonDelete {
+        width: 11vw;
+        height: 8vh;
         font-size: 2vw;
     }
 }
